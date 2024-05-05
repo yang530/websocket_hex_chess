@@ -2,7 +2,7 @@
 
 This is a Glinski's Hexagonal Chess web game I made with websocket technology.
 
-## What is This Game About:
+## What This Game is About:
 
 1. This game is Glinski's variation of hexagonal chess.
 2. The game is built with HTML, CSS and Javascript without any other front-end technology.
