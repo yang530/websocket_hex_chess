@@ -1,6 +1,6 @@
 # Glinski's Hexagonal Chess (websocket)
 
-This is a Glinski's Hexagonal Chess web game I made with websocket technology.
+This is a Glinski's Hexagonal Chess web game I made with websocket technology. The game allow two users to play Glinski's variant of hexagonal chess against each other online or on the same device.
 
 ## What This Game is About:
 
