@@ -1,0 +1,72 @@
+*{
+    --tile_h: 4vw;
+    --tile_w: calc(var(--tile_h) * 1.1547);
+    --tile_margin: 2px;
+}
+
+#gameboard{
+    display: flex;
+}
+
+.tile{
+    margin: var(--tile_margin);
+    height: var(--tile_h);
+    width: var(--tile_w);
+    background-color: gray;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    text-align: center;
+    padding: 0px;
+    position: relative;
+}
+.tile.highlighted{
+    background-color: brown;
+}
+.tile p{
+    display: block;
+    box-sizing: border-box;
+    font-size: calc(var(--tile_h) / 10);
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    text-align: center;
+    padding: 1px;
+    margin: auto;
+    z-index: 9;
+}
+
+.column{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0px;
+    padding: 0px;
+}
+
+.piece{
+    position: absolute;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    margin: auto;
+    padding: 10%;
+    z-index: 10;
+}
+
+.piece:active{
+    background-color: brown;
+}
+
+@media (orientation: portrait){
+    
+    *{
+        --tile_h: 8vw;
+        --tile_w: calc(var(--tile_h) * 1.1547);
+        --tile_margin: 2px;
+    }
+
+
+}

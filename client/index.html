@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game Prototype</title>
+    <link rel="stylesheet" href="css/gameboard.css">
+    <link rel="stylesheet" href="css/ui.css">
+
+</head>
+<body>
+
+    <section id="landing_page" class="active">
+        <h1 id="title">Glinski's Hexagonal Chess</h1>
+        <ul id="help_info">
+            <li>Local PvP: Play against another player on the same device</li>
+            <li>Online PvP: Start a game against another player online. The player who started the game will be the HOST. Each game session will be assigned a unique game id.</li>
+            <li>Join Game: Join a game that is already started. You need to ask HOST of the game you are joining for the game id</li>
+            <li>NOTE: Extra users joining a game will be made spectators. Spectator can only observe the game and partake in chat.</li>
+        </ul>
+            <form id="form1" class="active" action="">
+                <div id="form1_inputs">
+                    <div class="form1_inputfield" >
+                        <label for="input1" style="text-align: left; width: 20%;">username: </label>
+                        <input id="input1" style="float: right; width: 80%;" name="input1" autocomplete="off" />
+                    </div>
+                    <div class="form1_inputfield" >
+                        <label for="input2" style="text-align: left; width: 20%;">game id: </label>
+                        <input id="input2" style="float: right; width: 80%;" name="input2" autocomplete="off" />
+                    </div>
+                </div>
+                <div id="form1_btns">
+                    <button type="submit" value="one">Local PvP</button>
+                    <button type="submit" value="two">Online PvP</button>
+                    <button type="submit" value="join">Join Game</button>
+                </div>
+            </form>
+        <p id="info1"></p>
+    </section>
+
+    <section id="game_page">
+        <!--this is game UI-->
+        <div id="gui">
+            <div id="gState_panel">
+                <h1 id="gState">game state</h1>
+                <table id="info_table">
+                    <tr>
+                        <td>username:</td>
+                        <td id="table_uName"></td>
+                        <td>user id:</td>
+                        <td id="table_uID"></td>
+                    </tr>
+                    <tr>
+                        <td>is player:</td>
+                        <td id="table_isPlayer"></td>
+                        <td>game id:</td>
+                        <td id="table_gameID"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="chat_panel">
+                <div id="gConsole"></div>
+                <form id="chatbar" action="">
+                    <input id=chatInput placeholder="say something..." autocomplete="off"/>
+                    <button id="sendMsg" type="submit">send</button>
+                </form>
+            </div>
+        </div>
+        <!--this is the modal window-->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p>Promote Your Pawn!</p>
+                <form id="modal_form" action="">
+                    <button class="hex_btn" type="submit" value="bishop">bishop</button>
+                    <button class="hex_btn" type="submit" value="rook">rook</button>
+                    <button class="hex_btn" type="submit" value="queen">queen</button>
+                    <button class="hex_btn" type="submit" value="knight">knight</button>
+                </form>
+            </div>
+        </div>
+
+        <!--this is the gameboard-->
+        <div id="gameboard">
+            <!--tiles to be added here by script-->
+        </div>
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="javascript/game.js"></script>
+    
+</body>
+</html>
